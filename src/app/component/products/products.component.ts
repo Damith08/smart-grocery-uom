@@ -5,4 +5,11 @@ import { Component } from '@angular/core';
   templateUrl: './products.component.html',
   styleUrls: ['./products.component.css'],
 })
-export class ProductsComponent {}
+export class ProductsComponent {
+  public firstProductItemName = 'White Basmathi Rice';
+  public quantityOfRice = 75;
+
+  public getQuantityOfRice() {
+    return 350;
+  }
+}

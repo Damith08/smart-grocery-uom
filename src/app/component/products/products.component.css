@@ -18,3 +18,8 @@ table tbody tr td {
 tr:hover {
   background-color: #cBdaf8;
 }
+
+.icon {
+  color: rgb(99, 98, 98);
+  margin: 5px;
+}
