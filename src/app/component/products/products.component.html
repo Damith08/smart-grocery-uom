@@ -12,59 +12,42 @@
             <th scope="col">Product Description</th>
             <th scope="col">Product Date</th>
             <th scope="col">Quantity in Kgs</th>
+            <th scope="col">Availability</th>
             <th scope="col">Unit Price</th>
             <th scope="col">Product Actions</th>
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <th scope="row">1</th>
-            <td>{{ firstProductItemName }}</td>
-            <td>White Basmathi Rice imported from Pakistan</td>
-            <td>Jan 29, 2023</td>
-            <td>{{ getQuantityOfRice() }}</td>
-            <td>Rs. 400</td>
+          <tr *ngFor="let product of products">
+            <th scope="row">{{ product.productId }}</th>
+            <td>{{ product.productName }}</td>
+            <td>{{ product.productDescription }}</td>
+            <td>{{ product.createdDate }}</td>
+            <td>{{ product.quantity }}</td>
+            <td>{{ product.unitPrice }}</td>
+            <td>
+              <p *ngIf="product.quantity <= 50">Lower Inventory Level</p>
+              <p *ngIf="product.quantity > 50">Sufficient Inventory Level</p>
+            </td>
             <td>
               <i class="fa fa-eye icon"></i>
               <i class="fa fa-pencil-squre-0 icon"></i>
             </td>
           </tr>
-          <tr>
-            <th scope="row">2</th>
-            <td>Flour</td>
-            <td>Super Fine Whole grain general Purpose flour</td>
-            <td>Jan 29, 2023</td>
-            <td>50</td>
-            <td>Rs. 190</td>
-            <td>
-              <i class="fa fa-eye icon"></i>
-              <i class="fa fa-pencil-squre-0 icon"></i>
-            </td>
-          </tr>
-          <tr>
-            <th scope="row">3</th>
-            <td>Sugar</td>
-            <td>White sugar manufactured by Palwatte Factory</td>
-            <td>Jan 29, 2023</td>
-            <td>1200</td>
-            <td>Rs. 200</td>
-            <td>
-              <i class="fa fa-eye icon"></i>
-              <i class="fa fa-pencil-squre-0 icon"></i>
-            </td>
-          </tr>
-          <tr>
+          <!-- <tr>
             <th scope="row">4</th>
             <td>Dahl</td>
             <td>Imported mysoor dahl from India</td>
             <td>Jan 29, 2023</td>
-            <td>10</td>
+            <td [ngClass]="isLowInventory ? 'bg-danger' : 'bg-success'">
+              {{ getDahlStorage() }}
+            </td>
             <td>Rs. 200</td>
             <td>
               <i class="fa fa-eye icon"></i>
               <i class="fa fa-pencil-squre-o icon"></i>
             </td>
-          </tr>
+          </tr> -->
         </tbody>
       </table>
     </section>
