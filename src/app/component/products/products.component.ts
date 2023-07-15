@@ -41,8 +41,12 @@ export class ProductsComponent {
     },
   ];
 
-  // public isLowInventory = false;
-  // public dahlStorage = 10;
+  public firstProductItemName = 'White Basmathi Rice';
+  public isLowInventory = false;
+  public isRowSelected: boolean;
+  public storage = 10;
+
+  public rowIndex: number;
 
   // public getDahlStorage() {
   //   if (this.dahlStorage < 50) {
@@ -50,4 +54,9 @@ export class ProductsComponent {
   //   }
   //   return this.dahlStorage;
   // }
+
+  public selectProduct(selectedRow) {
+    this.isRowSelected = true;
+    this.rowIndex = selectedRow;
+  }
 }
