@@ -42,18 +42,24 @@ export class ProductsComponent {
   ];
 
   public firstProductItemName = 'White Basmathi Rice';
-  public isLowInventory = false;
-  public isRowSelected: boolean;
   public storage = 10;
+  public isLowInventory = true;
+  public isRowSelected: boolean;
 
   public rowIndex: number;
 
-  // public getDahlStorage() {
-  //   if (this.dahlStorage < 50) {
-  //     this.isLowInventory = true;
-  //   }
-  //   return this.dahlStorage;
-  // }
+  // public isLowInventory = true;
+  // public isRowSelected: boolean;
+  // public storage = 10;
+
+  // public rowIndex : number;
+
+  // // public getDahlStorage() {
+  // //   if (this.dahlStorage < 50) {
+  // //     this.isLowInventory = true;
+  // //   }
+  // //   return this.dahlStorage;
+  // // }
 
   public selectProduct(selectedRow) {
     this.isRowSelected = true;

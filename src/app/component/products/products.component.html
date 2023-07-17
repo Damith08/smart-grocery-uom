@@ -33,25 +33,24 @@
               <p *ngIf="product.quantity <= 50">Lower Inventory Level</p>
               <p *ngIf="product.quantity > 50">Sufficient Inventory Level</p>
             </td>
-            <td>
-              <i class="fa fa-eye icon"></i>
-              <i class="fa fa-pencil-squre-0 icon"></i>
+            <td></td>
+            <td colspan="3">
+              <button
+                type="button"
+                [disabled]="rowIndex != i && !isRowSelected"
+                class="btn-xs icon"
+              >
+                <i class="fa fa-eye"></i>
+              </button>
+              <button
+                type="button"
+                [disabled]="rowIndex != i && !isRowSelected"
+                class="btn-xs icon"
+              >
+                <i class="fa fa-pencil-squre-0"></i>
+              </button>
             </td>
           </tr>
-          <!-- <tr>
-            <th scope="row">4</th>
-            <td>Dahl</td>
-            <td>Imported mysoor dahl from India</td>
-            <td>Jan 29, 2023</td>
-            <td [ngClass]="isLowInventory ? 'bg-danger' : 'bg-success'">
-              {{ getDahlStorage() }}
-            </td>
-            <td>Rs. 200</td>
-            <td>
-              <i class="fa fa-eye icon"></i>
-              <i class="fa fa-pencil-squre-o icon"></i>
-            </td>
-          </tr> -->
         </tbody>
       </table>
     </section>
