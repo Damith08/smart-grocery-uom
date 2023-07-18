@@ -42,6 +42,8 @@ export class ProductsComponent {
     },
   ];
 
+  showAddProduct: boolean;
+
   // public firstProductItemName = 'White Basmathi Rice';
   // public storage = 10;
   // public isLowInventory = true;
@@ -64,5 +66,13 @@ export class ProductsComponent {
 
   public selectedProduct(selectedRow: number) {
     this.rowIndex = selectedRow;
+  }
+
+  public showAddProduct() {
+    this.showAddProduct = true;
+  }
+
+  public hideAddProduct() {
+    this.showAddProduct = false;
   }
 }
